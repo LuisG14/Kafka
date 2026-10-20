@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1010" viewBox="0 0 1720 1010" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <style>
+    text { font-size: 11.5px; fill: #1f2328; }
+    .h { font-weight: 700; font-size: 12.5px; }
+    .m { fill: #57606a; font-size: 10.5px; }
+    .big { font-size: 22px; font-weight: 700; }
+    .col { font-size: 14px; font-weight: 700; }
+    .b { fill: #ffffff; stroke-width: 1.3; }
+    .f { stroke: #3b82d4; }
+    .p { stroke: #5b9a3b; }
+    .k { stroke: #d9822b; }
+    .c { stroke: #7c5cd8; }
+    .n { stroke: #16a34a; stroke-width: 2.8; }
+    .bad { fill: #16a34a; }
+    .badt { fill: #ffffff; font-size: 9px; font-weight: 700; }
+    .num { fill: #16a34a; stroke: #ffffff; stroke-width: 1.5; }
+    .numt { fill: #ffffff; font-size: 10px; font-weight: 700; text-anchor: middle; }
+    .http { stroke: #3b82d4; stroke-width: 1.8; fill: none; }
+    .kaf { stroke: #d9822b; stroke-width: 1.8; fill: none; }
+    .int { stroke: #57606a; stroke-width: 1.4; fill: none; }
+    .dash { stroke-dasharray: 6 4; }
+    .part { fill: #fff4e5; stroke: #d9822b; stroke-width: 1; }
+  </style>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3b82d4"/></marker>
+    <marker id="ao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#57606a"/></marker>
+  </defs>
+
+  <rect x="0" y="0" width="1720" height="1010" fill="#ffffff"/>
+
+  <!-- Titulo -->
+  <text x="20" y="30" class="big">Arquitectura: React (front) &#8596; Spring Boot (producer / consumer) &#8596; Apache Kafka</text>
+  <text x="20" y="50" class="m">Actividad Modulo 8. Flujo original de menus (str-topic) y nuevo flujo de consulta de clientes (clientes-request / clientes-response).</text>
+
+  <!-- Columnas -->
+  <text x="20" y="86" class="col" style="fill:#3b82d4">FRONT-END  React 19 + Vite  (:5173)</text>
+  <rect x="10" y="92" width="320" height="780" rx="8" fill="#f7fafd" stroke="#cfe0f3"/>
+  <text x="440" y="86" class="col" style="fill:#5b9a3b">BACK-END  str-producer  Spring Boot (:8000)</text>
+  <rect x="430" y="92" width="440" height="780" rx="8" fill="#f8fbf5" stroke="#d6e6cb"/>
+  <text x="970" y="86" class="col" style="fill:#d9822b">KAFKA</text>
+  <rect x="960" y="92" width="250" height="780" rx="8" fill="#fffaf3" stroke="#f0dcc0"/>
+  <text x="1310" y="86" class="col" style="fill:#7c5cd8">BACK-END  str-consumer  Spring Boot (:8100)</text>
+  <rect x="1300" y="92" width="410" height="780" rx="8" fill="#faf8fe" stroke="#ddd3f3"/>
+
+  <!-- ===================== FRONT ===================== -->
+  <rect x="20" y="100" width="300" height="62" rx="6" class="b f"/>
+  <text x="32" y="119" class="h">App.jsx</text>
+  <text x="32" y="135">BrowserRouter &#183; Routes</text>
+  <text x="32" y="151" class="m">/  &#183;  /clientes  &#183;  /menus  &#183;  *</text>
+
+  <rect x="20" y="172" width="300" height="42" rx="6" class="b f"/>
+  <text x="32" y="190" class="h">Navbar.jsx</text>
+  <text x="32" y="205" class="m">NavLink: Home &#183; Clientes &#183; Menus</text>
+
+  <rect x="20" y="235" width="300" height="100" rx="6" class="b f"/>
+  <text x="32" y="254" class="h">Menus.jsx &#8594; components/Producer.jsx</text>
+  <text x="32" y="271">sendMessage()</text>
+  <text x="32" y="287" class="m">fetch GET :8000/producer/menu</text>
+  <text x="32" y="303" class="m">?message=&lt;texto&gt;menu</text>
+  <text x="32" y="319" class="m">muestra la respuesta (texto)</text>
+
+  <rect x="20" y="365" width="300" height="255" rx="6" class="b n"/>
+  <rect x="268" y="371" width="46" height="14" rx="3" class="bad"/><text x="291" y="381" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="32" y="384" class="h">pages/mainpages/Clientes.jsx</text>
+  <text x="32" y="399" class="m">vista con 2 pestanas (useState)</text>
+  <rect x="32" y="406" width="130" height="20" rx="3" fill="#16a34a"/><text x="97" y="420" style="fill:#fff;font-weight:700" text-anchor="middle">Consulta</text>
+  <rect x="168" y="406" width="140" height="20" rx="3" fill="#eef1f4" stroke="#c9d1d9"/><text x="238" y="420" text-anchor="middle">Arquitectura</text>
+
+  <rect x="32" y="436" width="276" height="88" rx="5" class="b f"/>
+  <text x="44" y="454" class="h">components/ConsultaClientes.jsx</text>
+  <text x="44" y="470">consultar()  &#8594;  fetch GET</text>
+  <text x="44" y="486" class="m">:8000/clientes?query=&lt;texto&gt;</text>
+  <text x="44" y="502" class="m">estado: query, clientes, error</text>
+
+  <rect x="32" y="538" width="276" height="70" rx="5" class="b f"/>
+  <text x="44" y="556" class="h">components/Arquitectura.jsx</text>
+  <text x="44" y="572" class="m">&lt;img src="arquitectura.png"&gt;</text>
+  <text x="44" y="588" class="m">muestra este diagrama</text>
+
+  <!-- ===================== PRODUCER ===================== -->
+  <rect x="440" y="100" width="420" height="90" rx="6" class="b p"/>
+  <text x="452" y="118" class="h">ProducerController  @RestController /producer</text>
+  <text x="452" y="134">sendMenu()  GET /producer/menu</text>
+  <text x="452" y="149">sendTest()  GET /producer/test</text>
+  <text x="452" y="165" class="m">sendAndWait(): polling de response (10 x 500 ms)</text>
+
+  <rect x="440" y="215" width="420" height="80" rx="6" class="b p"/>
+  <text x="452" y="233" class="h">StringProducerService  @Service</text>
+  <text x="452" y="249">sendMessage(message)</text>
+  <text x="452" y="264" class="m">kafkaTemplate.send("str-topic", particion, null, msg)</text>
+  <text x="452" y="280" class="m">contiene "menu" &#8594; particion 1 ; otro &#8594; particion 0</text>
+
+  <rect x="440" y="320" width="420" height="74" rx="6" class="b p"/>
+  <text x="452" y="338" class="h">ResponseListener  @Component</text>
+  <text x="452" y="354">@KafkaListener(topics="str-topic-response",</text>
+  <text x="452" y="369">groupId="group-1")  listen(message)</text>
+  <text x="452" y="384" class="m">guarda en static response (la lee sendAndWait)</text>
+
+  <rect x="440" y="450" width="420" height="60" rx="6" class="b n"/>
+  <rect x="802" y="456" width="46" height="14" rx="3" class="bad"/><text x="825" y="466" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="452" y="468" class="h">ClientesController  @RestController /clientes</text>
+  <text x="452" y="484">consultar(query)  GET /clientes?query=</text>
+  <text x="452" y="500" class="m">timeout 5 s &#8594; HTTP 504</text>
+
+  <rect x="440" y="535" width="420" height="90" rx="6" class="b n"/>
+  <rect x="802" y="541" width="46" height="14" rx="3" class="bad"/><text x="825" y="551" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="452" y="553" class="h">ClientesProducerService  @Service</text>
+  <text x="452" y="569">consultar(query, timeoutMs)</text>
+  <text x="452" y="585" class="m">send("clientes-request", correlationId, query)</text>
+  <text x="452" y="601" class="m">CompletableFuture por correlationId</text>
+  <text x="452" y="617">completar(correlationId, respuesta)</text>
+
+  <rect x="440" y="650" width="420" height="70" rx="6" class="b n"/>
+  <rect x="802" y="656" width="46" height="14" rx="3" class="bad"/><text x="825" y="666" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="452" y="668" class="h">ClientesResponseListener  @Component</text>
+  <text x="452" y="684">@KafkaListener(topics="clientes-response",</text>
+  <text x="452" y="699">groupId="group-clientes-response")  listen(record)</text>
+  <text x="452" y="714" class="m">&#8594; service.completar(key, value)</text>
+
+  <rect x="440" y="745" width="420" height="124" rx="6" class="b p"/>
+  <text x="452" y="763" class="h">Configuracion  @Configuration</text>
+  <text x="452" y="779">KafkaAdminConfig: kafkaAdmin(), topics()</text>
+  <text x="452" y="794" class="m">crea 4 topics (2 particiones, 1 replica c/u)</text>
+  <text x="452" y="810">StringProducerFactoryConfig:</text>
+  <text x="452" y="825" class="m">producerFactory(), kafkaTemplate()</text>
+  <text x="452" y="841">CorsConfig: addCorsMappings()  (origen :5173)</text>
+  <text x="452" y="857" class="m">application.yml: puerto 8000, bootstrap localhost:9092</text>
+
+  <!-- ===================== KAFKA ===================== -->
+  <rect x="970" y="100" width="230" height="90" rx="6" class="b k"/>
+  <text x="982" y="118" class="h">Broker Kafka (1 solo)</text>
+  <text x="982" y="134">cp-kafka 7.4.0 + Zookeeper</text>
+  <text x="982" y="150" class="m">localhost:9092 (desde el host)</text>
+  <text x="982" y="166" class="m">kafka:29092 (red Docker)</text>
+
+  <rect x="970" y="212" width="230" height="85" rx="6" class="b k"/>
+  <text x="982" y="230" class="h">str-topic</text>
+  <rect x="982" y="240" width="100" height="24" rx="3" class="part"/><text x="1032" y="256" text-anchor="middle">Particion 0</text>
+  <rect x="1088" y="240" width="100" height="24" rx="3" class="part"/><text x="1138" y="256" text-anchor="middle">Particion 1</text>
+  <text x="982" y="286" class="m">2 particiones &#183; factor de replicacion 1</text>
+
+  <rect x="970" y="312" width="230" height="85" rx="6" class="b k"/>
+  <text x="982" y="330" class="h">str-topic-response</text>
+  <rect x="982" y="340" width="100" height="24" rx="3" class="part"/><text x="1032" y="356" text-anchor="middle">Particion 0</text>
+  <rect x="1088" y="340" width="100" height="24" rx="3" class="part"/><text x="1138" y="356" text-anchor="middle">Particion 1</text>
+  <text x="982" y="386" class="m">2 particiones &#183; factor de replicacion 1</text>
+
+  <rect x="970" y="535" width="230" height="90" rx="6" class="b n"/>
+  <rect x="1148" y="541" width="46" height="14" rx="3" class="bad"/><text x="1171" y="551" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="982" y="553" class="h">clientes-request</text>
+  <rect x="982" y="562" width="100" height="24" rx="3" class="part"/><text x="1032" y="578" text-anchor="middle">Particion 0</text>
+  <rect x="1088" y="562" width="100" height="24" rx="3" class="part"/><text x="1138" y="578" text-anchor="middle">Particion 1</text>
+  <text x="982" y="612" class="m">2 particiones &#183; factor de replicacion 1</text>
+
+  <rect x="970" y="640" width="230" height="90" rx="6" class="b n"/>
+  <rect x="1148" y="646" width="46" height="14" rx="3" class="bad"/><text x="1171" y="656" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="982" y="658" class="h">clientes-response</text>
+  <rect x="982" y="667" width="100" height="24" rx="3" class="part"/><text x="1032" y="683" text-anchor="middle">Particion 0</text>
+  <rect x="1088" y="667" width="100" height="24" rx="3" class="part"/><text x="1138" y="683" text-anchor="middle">Particion 1</text>
+  <text x="982" y="717" class="m">2 particiones &#183; factor de replicacion 1</text>
+
+  <rect x="970" y="750" width="230" height="119" rx="6" class="b k"/>
+  <text x="982" y="768" class="h">docker-compose.yml</text>
+  <text x="982" y="784">zookeeper :2181</text>
+  <text x="982" y="800">kafka :9092 / :29092</text>
+  <text x="982" y="816">kafdrop (UI) :19000</text>
+  <text x="982" y="832" class="m">KAFKA_OFFSETS_TOPIC_</text>
+  <text x="982" y="847" class="m">REPLICATION_FACTOR: 1</text>
+
+  <!-- ===================== CONSUMER ===================== -->
+  <rect x="1310" y="200" width="390" height="230" rx="6" class="b c"/>
+  <text x="1322" y="218" class="h">StrConsumerListener  @Component</text>
+
+  <rect x="1322" y="232" width="366" height="48" rx="5" class="b c"/>
+  <text x="1334" y="250" class="h">listener3()  groupId="group-2"</text>
+  <text x="1334" y="267" class="m">topics="str-topic" (P0 + P1)  &#183;  solo log</text>
+
+  <rect x="1322" y="290" width="366" height="45" rx="5" class="b c"/>
+  <text x="1334" y="308" class="h">listener1()  groupId="group-1"</text>
+  <text x="1334" y="324" class="m">@TopicPartition(str-topic, P0)  &#183;  solo log</text>
+
+  <rect x="1322" y="345" width="366" height="76" rx="5" class="b c"/>
+  <text x="1334" y="363" class="h">listener2()  groupId="group-1"</text>
+  <text x="1334" y="379" class="m">@TopicPartition(str-topic, P1)</text>
+  <text x="1334" y="395">orderProcessor.process(message)</text>
+  <text x="1334" y="411" class="m">kafkaTemplate.send("str-topic-response", menu)</text>
+
+  <rect x="1310" y="445" width="390" height="55" rx="6" class="b c"/>
+  <text x="1322" y="463" class="h">OrderProcessor  @Service</text>
+  <text x="1322" y="479">process(message): vegan / vegetarian / meat / general</text>
+  <text x="1322" y="494" class="m">(clientes.ordenar() original queda sin uso)</text>
+
+  <rect x="1310" y="535" width="390" height="130" rx="6" class="b n"/>
+  <rect x="1644" y="541" width="46" height="14" rx="3" class="bad"/><text x="1667" y="551" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="1322" y="553" class="h">ClientesListener  @Component</text>
+  <text x="1322" y="569">clientesListener(ConsumerRecord)</text>
+  <text x="1322" y="585" class="m">@KafkaListener(topics="clientes-request",</text>
+  <text x="1322" y="600" class="m">groupId="group-clientes")</text>
+  <text x="1322" y="616">clientes.buscarJson(query)</text>
+  <text x="1322" y="632" class="m">kafkaTemplate.send("clientes-response",</text>
+  <text x="1322" y="647" class="m">key = correlationId, json)</text>
+
+  <rect x="1310" y="690" width="390" height="85" rx="6" class="b n"/>
+  <rect x="1644" y="696" width="46" height="14" rx="3" class="bad"/><text x="1667" y="706" class="badt" text-anchor="middle">NUEVO</text>
+  <text x="1322" y="708" class="h">clientes.java  @Service</text>
+  <text x="1322" y="724">buscarJson(query)  &#8594;  JSON</text>
+  <text x="1322" y="740" class="m">buscar(query): id | nombre | ciudad | email</text>
+  <text x="1322" y="756" class="m">8 clientes en memoria; query vacio = todos</text>
+
+  <rect x="1310" y="790" width="390" height="79" rx="6" class="b c"/>
+  <text x="1322" y="808" class="h">StringConsumerConfig  @Configuration</text>
+  <text x="1322" y="824">consumerFactory() &#183; validMessageContainerFactory()</text>
+  <text x="1322" y="840" class="m">RecordInterceptor validMessage(): filtro "Pan"</text>
+  <text x="1322" y="856" class="m">application.yml: puerto 8100, bootstrap localhost:9092</text>
+
+  <!-- ===================== FLECHAS HTTP ===================== -->
+  <!-- Menus: peticion y respuesta -->
+  <path d="M320,255 H362 V135 H440" class="http" marker-end="url(#ab)"/>
+  <path d="M440,170 H404 V295 H320" class="http dash" marker-end="url(#ab)"/>
+  <text transform="translate(386,215) rotate(-90)" class="m" text-anchor="middle">GET /producer/menu</text>
+
+  <!-- Clientes: peticion y respuesta -->
+  <path d="M320,468 H440" class="http" marker-end="url(#ab)"/>
+  <path d="M440,495 H320" class="http dash" marker-end="url(#ab)"/>
+  <text x="380" y="458" class="m" text-anchor="middle">GET /clientes?query=</text>
+  <text x="380" y="510" class="m" text-anchor="middle">200 JSON</text>
+
+  <!-- ===================== FLECHAS INTERNAS ===================== -->
+  <path d="M650,190 V215" class="int" marker-end="url(#ag)"/>
+  <path d="M650,510 V535" class="int" marker-end="url(#ag)"/>
+  <path d="M760,650 V625" class="int" marker-end="url(#ag)"/>
+  <text x="768" y="642" class="m">completar()</text>
+  <path d="M1500,421 V445" class="int" marker-end="url(#ag)"/>
+  <path d="M1500,665 V690" class="int" marker-end="url(#ag)"/>
+
+  <!-- ===================== FLECHAS KAFKA ===================== -->
+  <!-- producer -> str-topic / str-topic-response -> producer -->
+  <path d="M860,255 H970" class="kaf" marker-end="url(#ao)"/>
+  <text x="915" y="248" class="m" text-anchor="middle">send()</text>
+  <path d="M970,355 H860" class="kaf" marker-end="url(#ao)"/>
+  <text x="915" y="348" class="m" text-anchor="middle">listen()</text>
+  <!-- nuevo flujo producer -->
+  <path d="M860,580 H970" class="kaf" marker-end="url(#ao)"/>
+  <text x="915" y="572" class="m" text-anchor="middle">send(corrId)</text>
+  <path d="M970,685 H860" class="kaf" marker-end="url(#ao)"/>
+  <text x="915" y="678" class="m" text-anchor="middle">listen()</text>
+  <!-- str-topic -> listeners -->
+  <path d="M1200,225 L1322,256" class="kaf" marker-end="url(#ao)"/>
+  <path d="M1200,255 L1322,312" class="kaf" marker-end="url(#ao)"/>
+  <path d="M1200,285 L1322,370" class="kaf" marker-end="url(#ao)"/>
+  <text x="1240" y="234" class="m">g2</text>
+  <text x="1240" y="276" class="m">P0</text>
+  <text x="1240" y="318" class="m">P1</text>
+  <!-- listener2 -> str-topic-response -->
+  <path d="M1322,398 L1200,372" class="kaf" marker-end="url(#ao)"/>
+  <text x="1232" y="394" class="m">send()</text>
+  <!-- nuevo flujo consumer -->
+  <path d="M1200,580 H1310" class="kaf" marker-end="url(#ao)"/>
+  <text x="1255" y="573" class="m" text-anchor="middle">consume</text>
+  <path d="M1310,645 L1200,685" class="kaf" marker-end="url(#ao)"/>
+  <text x="1262" y="676" class="m">send(key)</text>
+
+  <!-- ===================== NUMEROS DEL NUEVO FLUJO ===================== -->
+  <circle cx="338" cy="468" r="8" class="num"/><text x="338" y="472" class="numt">1</text>
+  <circle cx="846" cy="474" r="8" class="num"/><text x="846" y="478" class="numt">2</text>
+  <circle cx="846" cy="590" r="8" class="num"/><text x="846" y="594" class="numt">3</text>
+  <circle cx="915" cy="592" r="8" class="num"/><text x="915" y="596" class="numt">4</text>
+  <circle cx="1690" cy="590" r="8" class="num"/><text x="1690" y="594" class="numt">5</text>
+  <circle cx="1255" cy="661" r="8" class="num"/><text x="1255" y="665" class="numt">6</text>
+  <circle cx="846" cy="700" r="8" class="num"/><text x="846" y="704" class="numt">7</text>
+  <circle cx="338" cy="495" r="8" class="num"/><text x="338" y="499" class="numt">8</text>
+
+  <!-- ===================== PANEL INFERIOR ===================== -->
+  <rect x="10" y="885" width="1700" height="115" rx="8" fill="#f7f8fa" stroke="#e5e7eb"/>
+  <text x="26" y="906" class="h" style="font-size:13px">Flujo del nuevo listener (consulta de clientes)</text>
+
+  <circle cx="34" cy="923" r="8" class="num"/><text x="34" y="927" class="numt">1</text>
+  <text x="50" y="927">ConsultaClientes.consultar() &#8594; fetch GET /clientes?query=texto</text>
+  <circle cx="34" cy="943" r="8" class="num"/><text x="34" y="947" class="numt">2</text>
+  <text x="50" y="947">ClientesController.consultar() recibe la peticion HTTP</text>
+  <circle cx="34" cy="963" r="8" class="num"/><text x="34" y="967" class="numt">3</text>
+  <text x="50" y="967">ClientesProducerService.consultar(): crea correlationId y publica en clientes-request</text>
+  <circle cx="34" cy="983" r="8" class="num"/><text x="34" y="987" class="numt">4</text>
+  <text x="50" y="987">Kafka guarda el mensaje en una de las 2 particiones de clientes-request</text>
+
+  <circle cx="620" cy="923" r="8" class="num"/><text x="620" y="927" class="numt">5</text>
+  <text x="636" y="927">ClientesListener (group-clientes) consume y llama clientes.buscarJson()</text>
+  <circle cx="620" cy="943" r="8" class="num"/><text x="620" y="947" class="numt">6</text>
+  <text x="636" y="947">Publica el JSON en clientes-response con la misma key (correlationId)</text>
+  <circle cx="620" cy="963" r="8" class="num"/><text x="620" y="967" class="numt">7</text>
+  <text x="636" y="967">ClientesResponseListener.listen() &#8594; completar(): libera el CompletableFuture</text>
+  <circle cx="620" cy="983" r="8" class="num"/><text x="620" y="987" class="numt">8</text>
+  <text x="636" y="987">El controller responde JSON 200 al front, que pinta la tabla de resultados</text>
+
+  <!-- Leyenda -->
+  <text x="1260" y="906" class="h" style="font-size:13px">Leyenda</text>
+  <path d="M1260,923 H1305" class="http" marker-end="url(#ab)"/><text x="1315" y="927">HTTP (fetch &#8594; REST)</text>
+  <path d="M1260,943 H1305" class="http dash" marker-end="url(#ab)"/><text x="1315" y="947">Respuesta HTTP</text>
+  <path d="M1260,963 H1305" class="kaf" marker-end="url(#ao)"/><text x="1315" y="967">Mensaje Kafka (publicar / consumir)</text>
+  <path d="M1260,983 H1305" class="int" marker-end="url(#ag)"/><text x="1315" y="987">Llamada interna entre clases</text>
+  <rect x="1545" y="915" width="150" height="26" rx="4" class="b n"/><text x="1620" y="932" text-anchor="middle">NUEVO (esta actividad)</text>
+  <rect x="1545" y="950" width="150" height="26" rx="4" class="b p"/><text x="1620" y="967" text-anchor="middle">Existente</text>
+</svg>
